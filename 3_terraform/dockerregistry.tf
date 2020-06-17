@@ -1,7 +1,7 @@
 resource "aws_instance" "ws1-docker-registry" {
   ami                         = data.aws_ami.k8s-base-machine.id # eu-west-2
   instance_type               = "t2.small"
-  key_name                    = "k8s-server-key"
+  key_name                    = "k8s-server-key-ws1"
   associate_public_ip_address = true
   security_groups             = [aws_security_group.nginx-web-facing.id]
   subnet_id                   = aws_subnet.main.id

@@ -26,6 +26,7 @@ The entire workshop installs and instantiates with the steps below, so will be e
 * Ansible - a shell command line tool, install from here:
         https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
  * A valid NGINX PLUS license. This consists of a certifate and key, nginx-repo.crt and nginx-key.crt
+	These certificate and key files should be placed in a directory called ~/.ssh/ngx-certs
  * A domain name registration within AWS Route 53. This can be any domain name of your choosing, the default will be nginxdemo.net which is registered and owned by F5 Networks.
  * The git command line tool. This can be installed from the relevant repo with your linux distro.
 
@@ -55,7 +56,7 @@ time terraform apply --auto-approve
 10. The next step is to build your base docker machine. This will be based on an existing CentOS image from AWS, but with docker installed ready for instantiation into a fully working kubernetes system at the next stage.
 ```
 cd ../2_packer
-packer build pack_k8s_base_machine.json
+packer build pack_k8s_base_docker_machine.json
 ```
 11. Once your  Docker base-machine is built, you can terraform the entire kubernetes cluster using stage 3_terraform
 ```
