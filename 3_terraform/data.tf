@@ -5,7 +5,7 @@ data "aws_ami" "k8s-base-machine" {
   filter {
     name = "tag:Name"
     values = [
-      "ws1.k8s-base-machine",
+      "workshop0001.k8s-base-machine",
     ]
   }
 }

@@ -6,13 +6,13 @@ metadata:
 spec:
   tls:
   - hosts:
-    - kubernetes.ws1.nginxdemo.net
-    - k8sdashboard.ws1.nginxdemo.net
-    - ingressdashboard.ws1.nginxdemo.net
+    - kubernetes.workshop0001.nginxdemo.net
+    - k8sdashboard.workshop0001.nginxdemo.net
+    - ingressdashboard.workshop0001.nginxdemo.net
     secretName: default-server-secret
     
   rules:
-  - host: kubernetes.ws1.nginxdemo.net
+  - host: kubernetes.workshop0001.nginxdemo.net
     http:
       paths:
       - path: "/dashboard.html"
@@ -28,7 +28,7 @@ spec:
           serviceName: nginx-plus-webserver-service
           servicePort: 80
 
-  - host: ingressdashboard.ws1.nginxdemo.net
+  - host: ingressdashboard.workshop0001.nginxdemo.net
     http:
       paths:
       - path: "/dashboard.html"
@@ -51,11 +51,11 @@ metadata:
 spec:
   tls:
   - hosts:
-    - k8sdashboard.ws1.nginxdemo.net
+    - k8sdashboard.workshop0001.nginxdemo.net
     secretName: default-server-secret
     
   rules:
-  - host: k8sdashboard.ws1.nginxdemo.net
+  - host: k8sdashboard.workshop0001.nginxdemo.net
     http:
       paths:
       - path: "/"

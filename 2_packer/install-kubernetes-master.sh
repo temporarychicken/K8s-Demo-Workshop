@@ -107,11 +107,11 @@ kubectl apply -f k8s_configuration/*
 
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 
-# We also need to create the default TLS secret for the ingress controller. We use our *.ws1.nginxdemo.net cert/key pair here.
+# We also need to create the default TLS secret for the ingress controller. We use our *.workshop0001.nginxdemo.net cert/key pair here.
 
-cat ~/certs/ws1.nginxdemo.net.crt.pem ~/certs/ws1.nginxdemo.net.issuer.pem >~/certs/ws1.nginxdemo.net.fullchain.pem
+cat ~/certs/workshop0001.nginxdemo.net.crt.pem ~/certs/workshop0001.nginxdemo.net.issuer.pem >~/certs/workshop0001.nginxdemo.net.fullchain.pem
 
-kubectl create secret tls default-server-secret --key=certs/ws1.nginxdemo.net.key.pem --cert=certs/ws1.nginxdemo.net.fullchain.pem
+kubectl create secret tls default-server-secret --key=certs/workshop0001.nginxdemo.net.key.pem --cert=certs/workshop0001.nginxdemo.net.fullchain.pem
 
 
 

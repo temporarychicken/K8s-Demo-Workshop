@@ -1,7 +1,7 @@
-resource "aws_instance" "ws1-docker-registry" {
+resource "aws_instance" "workshop0001-docker-registry" {
   ami                         = data.aws_ami.k8s-base-machine.id # eu-west-2
   instance_type               = "t2.small"
-  key_name                    = "k8s-server-key-ws1"
+  key_name                    = "k8s-server-key-workshop0001"
   associate_public_ip_address = true
   security_groups             = [aws_security_group.nginx-web-facing.id]
   subnet_id                   = aws_subnet.main.id
@@ -12,7 +12,7 @@ resource "aws_instance" "ws1-docker-registry" {
 
 
   tags = {
-    Name = "ws1-docker-registry"
+    Name = "workshop0001-docker-registry"
   }
 }
 
@@ -21,8 +21,8 @@ resource "aws_instance" "ws1-docker-registry" {
 
 resource "null_resource" "buildimages" {
   triggers = {
-    first_trigger  = aws_route53_record.dockerregistry-ws1.ttl
-	second_trigger = aws_instance.ws1-docker-registry.public_ip
+    first_trigger  = aws_route53_record.dockerregistry-workshop0001.ttl
+	second_trigger = aws_instance.workshop0001-docker-registry.public_ip
   }
 
 
@@ -33,7 +33,7 @@ resource "null_resource" "buildimages" {
     type     = "ssh"
     user     = "centos"
 	private_key = file("~/.ssh/k8s-key.pem")
-    host     = aws_instance.ws1-docker-registry.public_ip
+    host     = aws_instance.workshop0001-docker-registry.public_ip
   }
   
         inline = [
