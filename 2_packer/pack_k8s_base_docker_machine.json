@@ -26,7 +26,7 @@
     {
       "type": "file",
       "source": "{{user `home`}}/.ssh/ngx-certs",
-      "destination": "~/.ssh/ngx-certs",
+      "destination": "certs",
       "only": [
         "k8s-base-docker-machine"
       ]
@@ -50,7 +50,7 @@
     {
       "type": "shell",
       "inline": [
-        "mkdir certs"
+        "#mkdir certs"
       ],
       "only": [
         "k8s-base-docker-machine"
