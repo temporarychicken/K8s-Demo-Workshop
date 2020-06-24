@@ -17,7 +17,7 @@ spec:
         prometheus.io/port: "9113"
     spec:
       containers:
-      - image: dockerregistry.workshop0001.nginxdemo.net:443/nginx-plus-ingress:edge
+      - image: dockerregistry.davidluke.nginxdemo.net:443/nginx-plus-ingress:edge
         imagePullPolicy: Always
         name: nginx-plus-ingress
         ports:
