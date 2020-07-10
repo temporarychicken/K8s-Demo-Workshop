@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: dockerregistry.davidluke.nginxdemo.net:443/nginxplus
+        image: dockerregistry.workshop0001.nginxdemo.net:443/nginxplus
         volumeMounts:
         - name: config-volume
           mountPath: /etc/nginx/nginx.conf

@@ -2,7 +2,7 @@
 
 
 #export NOIP_HOSTNAME=nginxk8s.ddns.net
-#export NOIP_USERNAME=davidluke
+#export NOIP_USERNAME=workshop0001
 #export NOIP_PASSWORD=ToiletRoll\!30174
 
 #export CTR_APIGW_CERT=nginxk8s.crt
@@ -107,11 +107,11 @@ kubectl apply -f k8s_configuration/*
 
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 
-# We also need to create the default TLS secret for the ingress controller. We use our *.davidluke.nginxdemo.net cert/key pair here.
+# We also need to create the default TLS secret for the ingress controller. We use our *.workshop0001.nginxdemo.net cert/key pair here.
 
-cat ~/certs/davidluke.nginxdemo.net.crt.pem ~/certs/davidluke.nginxdemo.net.issuer.pem >~/certs/davidluke.nginxdemo.net.fullchain.pem
+cat ~/certs/workshop0001.nginxdemo.net.crt.pem ~/certs/workshop0001.nginxdemo.net.issuer.pem >~/certs/workshop0001.nginxdemo.net.fullchain.pem
 
-kubectl create secret tls default-server-secret --key=certs/davidluke.nginxdemo.net.key.pem --cert=certs/davidluke.nginxdemo.net.fullchain.pem
+kubectl create secret tls default-server-secret --key=certs/workshop0001.nginxdemo.net.key.pem --cert=certs/workshop0001.nginxdemo.net.fullchain.pem
 
 
 

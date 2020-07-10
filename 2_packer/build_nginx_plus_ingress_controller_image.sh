@@ -22,7 +22,7 @@ cp ~/certs/nginx-repo.* .
 
 #git checkout vlatest
 
-sudo make DOCKERFILE=DockerfileForPlus PREFIX=dockerregistry.davidluke.nginxdemo.net:443/nginx-plus-ingress
+sudo make DOCKERFILE=DockerfileForPlus PREFIX=dockerregistry.workshop0001.nginxdemo.net:443/nginx-plus-ingress
 
 
 
