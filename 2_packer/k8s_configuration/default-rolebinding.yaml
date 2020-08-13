@@ -4,8 +4,8 @@ metadata:
   namespace: default
   name: service-reader
 rules:
-- apiGroups: ["","k8s.nginx.org","extensions"] # "" indicates the core API group
-  resources: ["secrets","ingresses","services","virtualservers","virtualserverroutes","transportservers","endpoints","pods","events"]
+- apiGroups: ["","k8s.nginx.org","extensions","networking.k8s.io"] # "" indicates the core API group
+  resources: ["secrets","ingresses","services","virtualservers","virtualserverroutes","transportservers","endpoints","pods","events","policies","configmaps"]
   verbs: ["get", "watch", "list","create","patch"]
   
   
